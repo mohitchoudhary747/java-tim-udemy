@@ -6,6 +6,5 @@ public class CodeBlockIfElse {
         int scroe=800;
         int levelCompleted=5;
         int bonus=100;
-        // Mohit
     }
 }
