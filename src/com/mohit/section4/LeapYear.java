@@ -3,25 +3,31 @@ package com.mohit.section4;
 public class LeapYear {
     public static void main(String[] args) {
         print(-1600);
+        print(1600);
+        print(2017);
+        print(2000);
+        print(1924);
+        print(1800);
     }
 
     public static void print(int yearValue){
-        System.out.println(isLeapYear(yearValue));
+        System.out.println("isLeapYear("+yearValue+"); © "+isLeapYear(yearValue));
     }
 
     public static boolean isLeapYear(int year) {
-
-        if (year < 0 && year > 9999)
+        boolean flag=false;
+        if (year <= 0 ||  year > 9999)
             return false;
         else {
-            if ((year % 4) == 0) {
-                if ((year % 100) == 0) {
-                    if ((year % 100) == 0) {
-                        return true;
-                    } else return false;
-                } else return false;
-            } else {
-                return false;
+            if(year%100==0){
+                if((year%400)==0)
+                    return true;
+                else return false;
+            } else{
+                if((year%4)==0)
+                    return true;
+                else return false;
+
             }
         }
     }
