@@ -3,28 +3,45 @@ package com.mohit.section4;
 public class TeenNumberChecker {
     public static void main(String[] args) {
         print(9, 99, 19);
+        print(new int[]{9, 99, 19});
         print(23, 15, 42);
+        print(new int[]{23, 15, 42});
         print(22, 23, 34);
+        print(new int[]{22, 23, 34});
     }
 
-    static void print(int a, int b, int c){
-        System.out.println("For "+a+", "+b+", "+c+", "+"is there a teen ? "+hasTeen(a,b,c));
+    static void print(int a, int b, int c) {
+        System.out.println("For " + a + ", " + b + ", " + c + ", " + "is there a teen ? " + hasTeen(a, b, c));
+    }
+
+    static void print(int[] b) {
+        System.out.println("For " + b.toString() + ", " + "is there a teen ? " + hasTeen(b));
     }
 
     @SuppressWarnings("RedundantIfStatement")
     public static boolean hasTeen(int a, int b, int c) {
 
-        if(isTeen(a))
+        if (isTeen(a))
             return true;
-        if(isTeen(b))
+        if (isTeen(b))
             return true;
-        if(isTeen(c))
+        if (isTeen(c))
             return true;
         return false;
     }
-    public static boolean isTeen(int a){
 
-        return (a>12 && a<20);
+    public static boolean hasTeen(int[] numbers) {
+        for (int a : numbers) {
+            if (isTeen(a)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isTeen(int a) {
+
+        return (a > 12 && a < 20);
     }
 }
 
