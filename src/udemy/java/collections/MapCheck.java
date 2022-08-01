@@ -1,4 +1,4 @@
-package java.collections;
+package udemy.java.collections;
 
 import java.io.*;
 import java.util.*;

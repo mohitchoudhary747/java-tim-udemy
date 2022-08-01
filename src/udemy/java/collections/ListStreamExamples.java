@@ -1,4 +1,4 @@
-package java.collections;
+package udemy.java.collections;
 
 public class ListStreamExamples {
 

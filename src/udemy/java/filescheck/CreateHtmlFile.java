@@ -1,8 +1,27 @@
-package java.fileoperations;
+package udemy.java.filescheck;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class CreateHtmlFile {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println(getBannerHtmlFile());
+        String directory="/Users/yukhit/Documents/JunkFiles/abc";
+        String fileName="myBanner.html";
+        File htmlFile=new File(directory+"/"+fileName);
+        if(!Files.isDirectory(Paths.get(directory))){
+            new File(directory).mkdir();
+            System.out.println("created directory> "+directory);
+        } else{
+            System.out.println("Directory already there....");
+        }
+        BufferedWriter writer=new BufferedWriter(new FileWriter(htmlFile));
+        writer.write(getBannerHtmlFile());
+        writer.close();
     }
 
     public static String getBannerHtmlFile(){
@@ -13,7 +32,7 @@ public class CreateHtmlFile {
         String domainId="20";
         String anyOther="other Info";
 //        String tenantName=null;
-        String mainScript="";
+        String mainScript="<script src=\"\"></script>";
         String revokeButton="";
         String head="<!DOCTYPE html>\n" +
                 "<html lang=\"en-us\" prefix=\"og: http://ogp.me/ns#\">\n" +
